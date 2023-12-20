@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "406802539947",
+    "project_id": "culinarycraft-3ce71",
+    "storage_bucket": "culinarycraft-3ce71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406802539947:android:57c41edf39c9333553deee",
+        "android_client_info": {
+          "package_name": "ba.sum.fpmoz.culinarycraft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNoy4OcMdh65vWzulJkxUD-L3lA7400Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406802539947:android:8e11121d52e2754453deee",
+        "android_client_info": {
+          "package_name": "com.example.culinarycraft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNoy4OcMdh65vWzulJkxUD-L3lA7400Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406802539947:android:745288792422765e53deee",
+        "android_client_info": {
+          "package_name": "com.example.prva_aplikacijaa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNoy4OcMdh65vWzulJkxUD-L3lA7400Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
