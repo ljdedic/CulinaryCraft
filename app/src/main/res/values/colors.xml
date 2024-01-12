@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#8275FE</color>
+    <color name="colorPrimaryDark">#8275FE</color>
+    <color name="colorAccent">#8275FE</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorLightPurple">#8275FE</color>
+    <color name="colorDarkPurple">#8140FE</color>
+    <color name="colorPhrase">#CDD34D</color>
+    <color name="colorGray">#8C8C8C</color>
+    <color name="colorLightGray">#BEBEBE</color>
+    <color name="colorGrayText">#707070</color>
+    <color name="colorGraySearch">#EDEFF3</color>
+    <color name="colorGraySearchText">#FFA09F9F</color>
+    <color name="colorEmptyStar">#707070</color>
+    <color name="colorFullStar">#F0BA01</color>
+    <color name="colorRed">#F30000</color>
+    <color name="colorBlackText">#191919</color>
+    <color name="colorFB">#3B589C</color>
+    <color name="colorPurpleChat">#E6E3FE</color>
+    <color name="colorGrayChat">#F2F2F2</color>
+    <color name="colorGraySeekBar">#E0E0E0</color>
+    <color name="colorGrayBox">#F6F7F9</color>
+    <color name="colorLockedPurple">#BAB2FE</color>
 </resources>
