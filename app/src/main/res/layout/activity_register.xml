@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Unesiime"
+        android:id="@+id/unesiemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -42,13 +42,14 @@
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
-        android:id="@+id/Unesiprezime"
+        android:id="@+id/unesiprezime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -62,13 +63,14 @@
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/Unesiime"
-        app:layout_constraintStart_toStartOf="@+id/Unesiime"
-        app:layout_constraintTop_toBottomOf="@+id/Unesiime" />
+        app:layout_constraintEnd_toEndOf="@+id/unesiemail"
+        app:layout_constraintStart_toStartOf="@+id/unesiemail"
+        app:layout_constraintTop_toBottomOf="@+id/unesiemail" />
 
     <EditText
-        android:id="@+id/Unesiemail"
+        android:id="@+id/unesieemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -82,13 +84,14 @@
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/Unesiprezime"
-        app:layout_constraintStart_toStartOf="@+id/Unesiprezime"
-        app:layout_constraintTop_toBottomOf="@+id/Unesiprezime" />
+        app:layout_constraintEnd_toEndOf="@+id/unesiprezime"
+        app:layout_constraintStart_toStartOf="@+id/unesiprezime"
+        app:layout_constraintTop_toBottomOf="@+id/unesiprezime" />
 
     <EditText
-        android:id="@+id/Unesilozinku"
+        android:id="@+id/lo_lozinka"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -102,10 +105,11 @@
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/Unesiemail"
-        app:layout_constraintStart_toStartOf="@+id/Unesiemail"
-        app:layout_constraintTop_toBottomOf="@+id/Unesiemail" />
+        app:layout_constraintEnd_toEndOf="@+id/unesieemail"
+        app:layout_constraintStart_toStartOf="@+id/unesieemail"
+        app:layout_constraintTop_toBottomOf="@+id/unesieemail" />
 
     <Button
         android:id="@+id/btnregistracija"
@@ -121,9 +125,9 @@
         android:textColorHighlight="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
         android:textColorLink="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/Unesilozinku"
-        app:layout_constraintStart_toStartOf="@+id/Unesilozinku"
-        app:layout_constraintTop_toBottomOf="@+id/Unesilozinku"
+        app:layout_constraintEnd_toEndOf="@+id/lo_lozinka"
+        app:layout_constraintStart_toStartOf="@+id/lo_lozinka"
+        app:layout_constraintTop_toBottomOf="@+id/lo_lozinka"
         app:rippleColor="@color/colorWhite"
         app:strokeColor="@color/colorWhite" />
 

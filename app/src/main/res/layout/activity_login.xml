@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Unesiime"
+        android:id="@+id/unesiemail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -37,19 +37,20 @@
         android:drawableLeft="@drawable/ic_person"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Unesite ime..."
+        android:hint="Unesite email..."
         android:inputType="text"
         android:paddingLeft="24dp"
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
-        android:id="@+id/Unesiprezime"
+        android:id="@+id/unesiprezime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -57,28 +58,29 @@
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Unesite email..."
+        android:hint="Unesite lozinku..."
         android:inputType="text"
         android:paddingLeft="24dp"
         android:paddingTop="12dp"
         android:paddingRight="12dp"
         android:paddingBottom="12dp"
+        android:textColor="@color/colorBlackText"
         android:textColorHint="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/Unesiime"
-        app:layout_constraintStart_toStartOf="@+id/Unesiime"
-        app:layout_constraintTop_toBottomOf="@+id/Unesiime" />
+        app:layout_constraintEnd_toEndOf="@+id/unesiemail"
+        app:layout_constraintStart_toStartOf="@+id/unesiemail"
+        app:layout_constraintTop_toBottomOf="@+id/unesiemail" />
 
     <Button
-        android:id="@+id/btn_prijavi_se"
+        android:id="@+id/btnprijavise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:text="Prijavi se"
-        app:layout_constraintEnd_toEndOf="@+id/Unesiprezime"
-        app:layout_constraintStart_toStartOf="@+id/Unesiprezime"
-        app:layout_constraintTop_toBottomOf="@+id/Unesiprezime" />
+        app:layout_constraintEnd_toEndOf="@+id/unesiprezime"
+        app:layout_constraintStart_toStartOf="@+id/unesiprezime"
+        app:layout_constraintTop_toBottomOf="@+id/unesiprezime" />
 
     <Button
         android:id="@+id/btn_registriraj_se"
@@ -86,8 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Registriraj se "
-        app:layout_constraintEnd_toEndOf="@+id/btn_prijavi_se"
-        app:layout_constraintStart_toStartOf="@+id/btn_prijavi_se"
-        app:layout_constraintTop_toBottomOf="@+id/btn_prijavi_se" />
+        app:layout_constraintEnd_toEndOf="@+id/btnprijavise"
+        app:layout_constraintStart_toStartOf="@+id/btnprijavise"
+        app:layout_constraintTop_toBottomOf="@+id/btnprijavise" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
