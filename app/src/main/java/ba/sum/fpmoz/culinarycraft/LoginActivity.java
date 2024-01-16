@@ -42,8 +42,9 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()) {
                                 Toast.makeText(getBaseContext(), "Uspješna prijava!" , Toast.LENGTH_SHORT).show();
-                                //Intent movieIntent = new Intent(LoginActivity.this, MovieActivity.class);
-                                //startActivity(movieIntent);
+                                Intent movieIntent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(movieIntent);
+                                finish();
                             }else{
                                 Toast.makeText(getBaseContext(),"Pogrešno unešeni podaci!", Toast.LENGTH_SHORT).show();
                             }
