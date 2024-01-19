@@ -18,9 +18,9 @@
             android:id="@+id/movieItemImageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/ic_launcher_background"
             android:elevation="4dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
         <TextView
             android:id="@+id/Recipe_detail"
             android:layout_width="match_parent"

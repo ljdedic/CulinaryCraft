@@ -1,11 +1,10 @@
-package ba.sum.fpmoz.culinarycraft.models;
-import com.google.firebase.database.IgnoreExtraProperties;
+package ba.sum.fpmoz.culinarycraft;
 
-import java.util.HashMap;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import java.util.Map;
 
-@IgnoreExtraProperties
-public class Recipe {
+public class Add_recipe_activity {
     public String title;
     public String porcion;
     public String time;
@@ -14,10 +13,10 @@ public class Recipe {
 
     public Map<String, Float> ratings;
 
-    public Recipe() {
+    public Add_recipe_activity() {
     }
 
-    public Recipe(String title, String porcion, String time, String ingredients, String preparation) {
+    public Add_recipe_activity(String title, String porcion, String time, String ingredients, String preparation) {
         this.title = title;
         this.porcion = porcion;
         this.time = time;
@@ -34,4 +33,10 @@ public class Recipe {
         }
         return sum / ratings.size();
     }
+    public void saveToFirebase() {
+        DatabaseReference recipesRef = FirebaseDatabase.getInstance().getReference("recipes");
+        String recipeKey = recipesRef.push().getKey();
+        recipesRef.child(recipeKey).setValue(this);
+    }
 }
+

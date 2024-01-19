@@ -22,8 +22,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"USPJEŠNO",Toast.LENGTH_SHORT).show();
 
+                Intent intent = new Intent(MainActivity.this, Add_recipe_activity.class);
+                startActivity(intent);
+
+                Toast.makeText(MainActivity.this, "Sada možete dodati jelo", Toast.LENGTH_SHORT).show();
             }
         });
 
