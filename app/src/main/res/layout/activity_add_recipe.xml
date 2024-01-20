@@ -3,120 +3,139 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" >
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="16dp">
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/movieItemImageView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:elevation="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
-        <TextView
-            android:id="@+id/Recipe_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Naziv jela"
-            android:padding="10dp"
-            android:textSize="24sp"
-            android:textColor="#000000"
-            android:drawablePadding="8dp"
-            android:elevation="2dp" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/logo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="@color/colorLightPurple"
+                android:contextClickable="false"
+                android:elegantTextHeight="false"
+                android:fontFamily="@font/damion"
+                android:freezesText="false"
                 android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/portion"/>
-                <TextView
-                    android:id="@+id/textView_porcion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Broj osoba"
-                    android:textColor="@color/colorBlackText"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
+                android:paddingLeft="20dp"
+                android:text="CulinaryCraft"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlackText"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/portion"/>
-                <TextView
-                    android:id="@+id/textView_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Utrošeno vrijeme"
-                    android:textColor="@color/colorBlackText"
-                    android:textSize="14sp"/>
+                android:paddingTop="15dp"
+                android:src="@tools:sample/avatars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/likes"/>
-                <TextView
-                    android:id="@+id/textView_likes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Sviđa mi se"
-                    android:textColor="@color/colorBlackText"
-                    android:textSize="14sp"/>
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/movieItemDirector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sastojci:"
-            android:textSize="20sp"
-            android:padding="5dp"
-            android:drawablePadding="8dp" />
-
-        <TextView
-            android:id="@+id/movieItemGenere"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Priprema"
-            android:textSize="20sp"
-            android:padding="5dp"
-            android:drawablePadding="8dp" />
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <EditText
+            android:id="@+id/textView12"
+            android:layout_width="396dp"
+            android:layout_height="69dp"
+            android:hint="Ime jela"
+            android:inputType="text"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlackText"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="@+id/textView13"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/textView13"
+            android:layout_width="397dp"
+            android:layout_height="79dp"
+            android:hint="Potrebni sastojci"
+            android:inputType="text"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlackText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="86dp" />
+
+        <EditText
+            android:id="@+id/textView14"
+            android:layout_width="397dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="12dp"
+            android:drawableRight="@drawable/baseline_access_time_24"
+            android:hint="Potrebno vrijeme za pripremu jela"
+            android:inputType="text"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlackText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/textView15"
+            android:layout_width="388dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="12dp"
+            android:drawableRight="@drawable/portion"
+            android:hint="Broj porcija"
+            android:inputType="number"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlackText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/textView16"
+            android:layout_width="391dp"
+            android:layout_height="77dp"
+            android:layout_marginTop="12dp"
+            android:hint="Kratka uputa za pripremu"
+            android:inputType="text"
+            android:paddingTop="10dp"
+            android:textColor="@color/colorBlackText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Spremi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
