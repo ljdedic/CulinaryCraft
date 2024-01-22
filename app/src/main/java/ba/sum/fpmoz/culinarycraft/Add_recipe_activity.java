@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class Add_recipe_activity {
     public String title;
+    
     public String porcion;
     public String time;
     public String ingredients;

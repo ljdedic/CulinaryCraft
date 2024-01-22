@@ -5,137 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightPurple"
+        android:contextClickable="false"
+        android:elegantTextHeight="false"
+        android:fontFamily="@font/damion"
+        android:freezesText="false"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:text="CulinaryCraft"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlackText"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@tools:sample/avatars"
+        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="58dp"
+        tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/logo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/colorLightPurple"
-                android:contextClickable="false"
-                android:elegantTextHeight="false"
-                android:fontFamily="@font/damion"
-                android:freezesText="false"
-                android:gravity="center"
-                android:paddingLeft="20dp"
-                android:text="CulinaryCraft"
-                android:textAllCaps="false"
-                android:textColor="@color/colorBlackText"
-                android:textSize="34sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/imejela"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="37dp"
+        android:hint="Ime jela"
+        android:inputType="text"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorBlackText"
+        app:layout_constraintBottom_toTopOf="@+id/potrebnisastojci"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-            <ImageView
-                android:id="@+id/myImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+    <EditText
+        android:id="@+id/potrebnisastojci"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:hint="Potrebni sastojci"
+        android:inputType="text"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorBlackText"
+        app:layout_constraintEnd_toEndOf="@+id/imejela"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imejela"
+        app:layout_constraintTop_toBottomOf="@+id/imejela"
+        tools:ignore="MissingConstraints" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
+    <EditText
+        android:id="@+id/potrebnovrijeme"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:drawableRight="@drawable/baseline_access_time_24"
+        android:hint="Potrebno vrijeme za pripremu jela"
+        android:inputType="text"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorBlackText"
+        app:layout_constraintEnd_toEndOf="@+id/potrebnisastojci"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/potrebnisastojci"
+        app:layout_constraintTop_toBottomOf="@+id/potrebnisastojci"
+        tools:ignore="MissingConstraints" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <EditText
+        android:id="@+id/brojporcija"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:drawableRight="@drawable/portion"
+        android:hint="Broj porcija"
+        android:inputType="number"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorBlackText"
+        app:layout_constraintEnd_toEndOf="@+id/potrebnovrijeme"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/potrebnovrijeme"
+        app:layout_constraintTop_toBottomOf="@+id/potrebnovrijeme"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/upute"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:hint="Kratka uputa za pripremu"
+        android:inputType="text"
+        android:paddingTop="10dp"
+        android:textColor="@color/colorBlackText"
+        app:layout_constraintEnd_toEndOf="@+id/brojporcija"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/brojporcija"
+        app:layout_constraintTop_toBottomOf="@+id/brojporcija"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/spremi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Spremi"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <EditText
-            android:id="@+id/imejela"
-            android:layout_width="396dp"
-            android:layout_height="69dp"
-            android:hint="Ime jela"
-            android:inputType="text"
-            android:paddingTop="10dp"
-            android:textColor="@color/colorBlackText"
-            app:layout_constraintBottom_toTopOf="@+id/potrebnisastojci"
-            app:layout_constraintEnd_toEndOf="@+id/potrebnisastojci"
-            app:layout_constraintStart_toStartOf="@+id/potrebnisastojci"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/potrebnisastojci"
-            android:layout_width="397dp"
-            android:layout_height="79dp"
-            android:hint="Potrebni sastojci"
-            android:inputType="text"
-            android:paddingTop="10dp"
-            android:textColor="@color/colorBlackText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="86dp" />
-
-        <EditText
-            android:id="@+id/potrebnovrijeme"
-            android:layout_width="397dp"
-            android:layout_height="76dp"
-            android:layout_marginTop="12dp"
-            android:drawableRight="@drawable/baseline_access_time_24"
-            android:hint="Potrebno vrijeme za pripremu jela"
-            android:inputType="text"
-            android:paddingTop="10dp"
-            android:textColor="@color/colorBlackText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/potrebnisastojci"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/brojporcija"
-            android:layout_width="388dp"
-            android:layout_height="71dp"
-            android:layout_marginTop="12dp"
-            android:drawableRight="@drawable/portion"
-            android:hint="Broj porcija"
-            android:inputType="number"
-            android:paddingTop="10dp"
-            android:textColor="@color/colorBlackText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/potrebnovrijeme"
-            tools:ignore="MissingConstraints" />
-
-        <EditText
-            android:id="@+id/upute"
-            android:layout_width="391dp"
-            android:layout_height="77dp"
-            android:layout_marginTop="12dp"
-            android:hint="Kratka uputa za pripremu"
-            android:inputType="text"
-            android:paddingTop="10dp"
-            android:textColor="@color/colorBlackText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/brojporcija"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/spremi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Spremi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upute" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
