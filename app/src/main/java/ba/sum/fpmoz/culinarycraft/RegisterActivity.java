@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://culinarycraft-3ce71-default-rtdb.europe-west1.firebasedatabase.app/");
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override

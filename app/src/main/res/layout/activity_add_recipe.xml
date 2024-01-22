@@ -35,14 +35,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/myImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
-                android:src="@tools:sample/avatars"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logo" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
@@ -50,23 +49,24 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <EditText
-            android:id="@+id/textView12"
+            android:id="@+id/imejela"
             android:layout_width="396dp"
             android:layout_height="69dp"
             android:hint="Ime jela"
             android:inputType="text"
             android:paddingTop="10dp"
             android:textColor="@color/colorBlackText"
-            app:layout_constraintBottom_toTopOf="@+id/textView13"
-            app:layout_constraintEnd_toEndOf="@+id/textView13"
-            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintBottom_toTopOf="@+id/potrebnisastojci"
+            app:layout_constraintEnd_toEndOf="@+id/potrebnisastojci"
+            app:layout_constraintStart_toStartOf="@+id/potrebnisastojci"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/textView13"
+            android:id="@+id/potrebnisastojci"
             android:layout_width="397dp"
             android:layout_height="79dp"
             android:hint="Potrebni sastojci"
@@ -80,7 +80,7 @@
             tools:layout_editor_absoluteY="86dp" />
 
         <EditText
-            android:id="@+id/textView14"
+            android:id="@+id/potrebnovrijeme"
             android:layout_width="397dp"
             android:layout_height="76dp"
             android:layout_marginTop="12dp"
@@ -91,11 +91,11 @@
             android:textColor="@color/colorBlackText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/potrebnisastojci"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/textView15"
+            android:id="@+id/brojporcija"
             android:layout_width="388dp"
             android:layout_height="71dp"
             android:layout_marginTop="12dp"
@@ -107,11 +107,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.36"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/potrebnovrijeme"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/textView16"
+            android:id="@+id/upute"
             android:layout_width="391dp"
             android:layout_height="77dp"
             android:layout_marginTop="12dp"
@@ -122,18 +122,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.36"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/brojporcija"
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/spremi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Spremi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/upute" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
