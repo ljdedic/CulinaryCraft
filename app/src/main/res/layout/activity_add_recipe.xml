@@ -28,7 +28,7 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@tools:sample/avatars"
+        tools:src="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="@+id/logo"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="58dp"
