@@ -31,7 +31,7 @@
                 tools:layout_editor_absoluteX="-8dp"
                 tools:layout_editor_absoluteY="53dp" />
             <ImageView
-                android:id="@+id/imageView_food"
+                android:id="@+id/dodavanjeslike"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_margin="8dp"
