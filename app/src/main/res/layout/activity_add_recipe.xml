@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:layout_height="wrap_content">
 
 
     <Button
@@ -22,9 +21,9 @@
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorLightPurple"
+        android:background="@color/colorDarkPurple"
+        android:fontFamily="@font/damion"
         android:gravity="center"
-        android:padding="20dp"
         android:text="CulinaryCraft"
         android:textColor="@color/colorBlackText"
         android:textSize="34sp"
@@ -116,6 +115,27 @@
         android:text="Spremi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upute" />
+
+    <Button
+        android:id="@+id/btnuredi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Uredi"
+        app:layout_constraintEnd_toStartOf="@+id/spremi"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upute" />
+
+    <Button
+        android:id="@+id/btnizbrisi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Izbriši"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spremi"
         app:layout_constraintTop_toBottomOf="@+id/upute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
