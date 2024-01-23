@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "ba.sum.fpmoz.culinarycraft"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ba.sum.fpmoz.culinarycraft"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -27,7 +27,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
 }
+
 
 dependencies {
 
@@ -39,8 +41,12 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation ("androidx.cardview:cardview:1.0.0")
-    implementation("com.google.firebase:firebase-database:23.0.0")
+    //implementation("com.google.firebase:firebase-database:23.0.0")
     implementation("com.firebaseui:firebase-ui-database:8.0.2")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation ("com.squareup.picasso:picasso:2.8")
 
 
     testImplementation("junit:junit:4.13.2")

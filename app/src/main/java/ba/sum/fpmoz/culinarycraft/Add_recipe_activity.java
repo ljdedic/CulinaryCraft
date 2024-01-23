@@ -15,6 +15,8 @@ public class Add_recipe_activity {
     public Map<String, Float> ratings;
 
     public Add_recipe_activity() {
+
+
     }
 
     public Add_recipe_activity(String title, String porcion, String time, String ingredients, String preparation) {
@@ -35,9 +37,10 @@ public class Add_recipe_activity {
         return sum / ratings.size();
     }
     public void saveToFirebase() {
-        DatabaseReference recipesRef = FirebaseDatabase.getInstance().getReference("recipes");
+        DatabaseReference recipesRef = FirebaseDatabase.getInstance().getReference("jelo");
         String recipeKey = recipesRef.push().getKey();
         recipesRef.child(recipeKey).setValue(this);
     }
+
 }
 
