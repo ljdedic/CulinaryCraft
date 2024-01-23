@@ -2,7 +2,7 @@ package ba.sum.fpmoz.culinarycraft;
 
 public class Mainmodel {
 
-    String brojporcija, imejela, potrebnisastojci, potrebnovrijeme, upute, surl;
+    String brojporcija, imejela, potrebnovrijeme, slika;
 
 
     Mainmodel()
@@ -10,13 +10,11 @@ public class Mainmodel {
 
     }
 
-    public Mainmodel(String brojporcija, String imejela, String potrebnisastojci, String potrebnovrijeme, String upute, String surl) {
+    public Mainmodel(String brojporcija, String imejela, String potrebnovrijeme, String slika) {
         this.brojporcija = brojporcija;
         this.imejela = imejela;
-        this.potrebnisastojci = potrebnisastojci;
         this.potrebnovrijeme = potrebnovrijeme;
-        this.upute = upute;
-        this.surl = surl;
+        this.slika = slika;
     }
 
     public String getBrojporcija() {
@@ -35,14 +33,6 @@ public class Mainmodel {
         this.imejela = imejela;
     }
 
-    public String getPotrebnisastojci() {
-        return potrebnisastojci;
-    }
-
-    public void setPotrebnisastojci(String potrebnisastojci) {
-        this.potrebnisastojci = potrebnisastojci;
-    }
-
     public String getPotrebnovrijeme() {
         return potrebnovrijeme;
     }
@@ -51,19 +41,11 @@ public class Mainmodel {
         this.potrebnovrijeme = potrebnovrijeme;
     }
 
-    public String getUpute() {
-        return upute;
+    public String getSlika() {
+        return slika;
     }
 
-    public void setUpute(String upute) {
-        this.upute = upute;
-    }
-
-    public String getSurl() {
-        return surl;
-    }
-
-    public void setSurl(String surl) {
-        this.surl = surl;
+    public void setSlika(String slika) {
+        this.slika = slika;
     }
 }

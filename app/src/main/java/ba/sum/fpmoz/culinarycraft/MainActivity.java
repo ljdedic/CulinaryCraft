@@ -1,4 +1,4 @@
-    package ba.sum.fpmoz.culinarycraft;
+package ba.sum.fpmoz.culinarycraft;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,33 +19,39 @@ import com.google.firebase.database.FirebaseDatabase;
     FloatingActionButton fab;
     RecyclerView recyclearView;
     MainAdapter mainAdapter;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://culinarycraft-3ce71-default-rtdb.europe-west1.firebasedatabase.app/");
 
         @Override
         protected void onStart() {
             super.onStart();
+            mainAdapter.startListening();
         }
 
         @Override
         protected void onStop() {
             super.onStop();
+            mainAdapter.stopListening();
         }
 
         @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclearView = (RecyclerView)findViewById(R.id.rv);
-        recyclearView.setLayoutManager(new LinearLayoutManager(this));
+        this.recyclearView = (RecyclerView)findViewById(R.id.rv);
+        this.recyclearView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        FirebaseRecyclerOptions<Mainmodel> options =
-                new FirebaseRecyclerOptions.Builder<Mainmodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("jela"), Mainmodel.class)
-                        .build();
 
-        mainAdapter = new MainAdapter(options);
-        recyclearView.setAdapter(mainAdapter);
+        FirebaseRecyclerOptions<Mainmodel> options = new FirebaseRecyclerOptions.Builder<Mainmodel>().setQuery(
+                this.mDatabase.getReference("jela"),
+                Mainmodel.class
+        ).build();
+
+        this.mainAdapter = new MainAdapter(options);
+        this.recyclearView.setAdapter(mainAdapter);
+
+
 
 
 
