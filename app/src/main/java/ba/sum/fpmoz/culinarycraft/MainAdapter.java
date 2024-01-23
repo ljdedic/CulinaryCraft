@@ -24,7 +24,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Mainmodel model) {
-        holder.brojporcija.setText(model.getBrojporcija());
+        holder.brojporcija.setText(String.valueOf(model.getBrojporcija()));
         holder.imejela.setText(model.getImejela());
         holder.potrebnovrijeme.setText(model.getPotrebnovrijeme());
 
@@ -33,6 +33,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
                 .load(model.getSlika())
                 .into(holder.img);
     }
+
 
     @NonNull
     @Override

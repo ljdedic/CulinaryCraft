@@ -4,7 +4,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.Map;
 
-public class Add_recipe_activity {
+public class RecipeModel {
     public String title;
     
     public String porcion;
@@ -14,12 +14,12 @@ public class Add_recipe_activity {
 
     public Map<String, Float> ratings;
 
-    public Add_recipe_activity() {
+    public RecipeModel() {
 
 
     }
 
-    public Add_recipe_activity(String title, String porcion, String time, String ingredients, String preparation) {
+    public RecipeModel(String title, String porcion, String time, String ingredients, String preparation) {
         this.title = title;
         this.porcion = porcion;
         this.time = time;

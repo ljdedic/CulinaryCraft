@@ -61,7 +61,7 @@ import com.google.firebase.database.FirebaseDatabase;
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, Add_recipe_activity.class);
+                Intent intent = new Intent(MainActivity.this, AddRecipeActivity.class);
                 startActivity(intent);
 
                 Toast.makeText(MainActivity.this, "Sada možete dodati jelo", Toast.LENGTH_SHORT).show();
