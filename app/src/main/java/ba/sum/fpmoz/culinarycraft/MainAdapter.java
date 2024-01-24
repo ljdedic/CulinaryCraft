@@ -50,7 +50,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.dodavanjeslike);
+            img = itemView.findViewById(R.id.imageView_food);
             brojporcija = itemView.findViewById(R.id.brojporcija);
             imejela = itemView.findViewById(R.id.imejela);
             potrebnovrijeme = itemView.findViewById(R.id.potrebnovrijeme);

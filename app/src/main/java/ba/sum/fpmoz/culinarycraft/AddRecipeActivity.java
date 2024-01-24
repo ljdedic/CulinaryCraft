@@ -1,55 +1,80 @@
 package ba.sum.fpmoz.culinarycraft;
 
-import android.net.Uri;
-import android.os.Bundle;
 import android.content.Intent;
-import android.provider.MediaStore;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import ba.sum.fpmoz.culinarycraft.RecipeModel;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddRecipeActivity extends AppCompatActivity {
-    private static final int PICK_IMAGE_REQUEST = 1;
+    FirebaseStorage storage;
+    StorageReference storageReference;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://culinarycraft-3ce71-default-rtdb.europe-west1.firebasedatabase.app/");
 
-    private ImageView dodajJeloImageView;
-    private Button dodajSlikuButton;
+
+    Button selectImageBtn;
+    Button uploadImageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
-        dodajJeloImageView = findViewById(R.id.dodajjelo);
-        dodajSlikuButton = findViewById(R.id.dodajsliku);
+        //EditText adddishTxt = findViewById(R.id.dodajjelo);
+        EditText addnamedihTxt = findViewById(R.id.imejela);
+        EditText addingrediansTxt = findViewById(R.id.potrebnisastojci);
+        EditText addtimeTxt = findViewById(R.id.potrebnovrijeme);
+        EditText addportionsInt = findViewById(R.id.brojporcija);
+        EditText adddirectionTxt = findViewById(R.id.upute);
 
-        dodajSlikuButton.setOnClickListener(new View.OnClickListener() {
+        Button addButton = findViewById(R.id.dodajsliku);
+        Button recepiesaveButton = findViewById(R.id.spremi);
+
+        DatabaseReference usersDbref = mDatabase.getReference("jela");
+
+        recepiesaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openImagePicker();
+                String imejela = addnamedihTxt.getText().toString();
+                String potrebnisastojci = addingrediansTxt.getText().toString();
+                String potrebnovrijeme = addingrediansTxt.getText().toString();
+                String brojporcija = addportionsInt.getText().toString();
+                String upute = adddirectionTxt.getText().toString();
+                AddRecipeActivity r = new AddRecipeActivity();
+                usersDbref.push().setValue(r);
+                Intent i = new Intent(AddRecipeActivity.this, MainActivity.class);
+                startActivity(i);
             }
         });
-    }
 
-    private void openImagePicker() {
-        // Create an Intent to open the image gallery
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        galleryIntent.setType("image/*");
+        //NE RADIIII!!!!
+        //Button updateRecepie = findViewById(R.id.btnuredi);
+        //updateRecepie.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+               // ModelRecept updatedRecepie = new ModelRecept(imejela, potrebnisastojci,potrebnovrijeme,brojporcija,upute);
+          //  }
+        //});
 
-        // Start the activity for result, expecting a result in onActivityResult
-        startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST);
-    }
+        //NE RADIIIII!!!!!
+        //Button deleteRecepie = findViewById(R.id.btnizbrisi);
 
-    // Handle the result of the image picker activity
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            // Get the selected image URI and set it to the ImageView
-            Uri imageUri = data.getData();
-            dodajJeloImageView.setImageURI(imageUri);
-        }
+        //deleteRecepie.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+           //     finish();
+         //   }
+       // });
     }
 }
