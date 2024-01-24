@@ -5,36 +5,70 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Map;
 
 public class RecipeModel {
-    public String title;
-    
-    public String porcion;
-    public String time;
-    public String ingredients;
-    public String preparation;
+    private String dodajjelo;
+    private String imejela;
+    private String potrebnisastojci;
+    private String potrebnovrijeme;
+    private int brojporcija;
+    private String upute;
 
-    public Map<String, Float> ratings;
+    public RecipeModel() {}
 
-    public RecipeModel() {
-
-
+    public RecipeModel(String dodajjelo, String imejela,String potrebnisastojci, String potrebnovrijeme,int brojporcija, String upute){
+        this.dodajjelo = dodajjelo;
+        this.imejela = imejela;
+        this.potrebnisastojci = potrebnisastojci;
+        this.potrebnovrijeme = potrebnovrijeme;
+        this.brojporcija = brojporcija;
+        this.upute = upute;
     }
 
-    public RecipeModel(String title, String porcion, String time, String ingredients, String preparation) {
-        this.title = title;
-        this.porcion = porcion;
-        this.time = time;
-        this.ingredients = ingredients;
-        this.preparation = preparation;
+    public String getDodajjelo() {
+        return dodajjelo;
     }
-    public float getAverageRating() {
-        if (ratings == null || ratings.isEmpty()) {
-            return 0;
-        }
-        float sum = 0;
-        for (Float rating : ratings.values()) {
-            sum += rating;
-        }
-        return sum / ratings.size();
+
+    public void setDodajjelo(String dodajjelo) {
+        this.dodajjelo = dodajjelo;
+    }
+
+    public String getImejela() {
+        return imejela;
+    }
+
+    public void setImejela(String imejela) {
+        this.imejela = imejela;
+    }
+
+    public String getPotrebnisastojci() {
+        return potrebnisastojci;
+    }
+
+    public void setPotrebnisastojci(String potrebnisastojci) {
+        this.potrebnisastojci = potrebnisastojci;
+    }
+
+    public String getPotrebnovrijeme() {
+        return potrebnovrijeme;
+    }
+
+    public void setPotrebnovrijeme(String potrebnovrijeme) {
+        this.potrebnovrijeme = potrebnovrijeme;
+    }
+
+    public int getBrojporcija() {
+        return brojporcija;
+    }
+
+    public void setBrojporcija(int brojporcija) {
+        this.brojporcija = brojporcija;
+    }
+
+    public String getUpute() {
+        return upute;
+    }
+
+    public void setUpute(String upute) {
+        this.upute = upute;
     }
     public void saveToFirebase() {
         DatabaseReference recipesRef = FirebaseDatabase.getInstance().getReference("jelo");
