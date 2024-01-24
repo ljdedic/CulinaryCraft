@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,19 +98,14 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    <ImageButton
+                        android:id="@+id/likeButton"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/likes" />
-
-                    <TextView
-                        android:id="@+id/textView_likes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:text="Sviđa mi se"
-                        android:textColor="@color/colorBlackText"
-                        android:textSize="14sp" />
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:onClick="onLikeButtonClick"
+                        android:src="@drawable/ic_heart_empty" />
 
                 </LinearLayout>
 
