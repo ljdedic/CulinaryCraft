@@ -37,33 +37,29 @@ public class AddRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
-        //EditText adddishTxt = findViewById(R.id.dodajjelo);
+        //(String imejela,String txtpotrebnovrijeme, int brojporcija, String urlslike)
         EditText addnamedihTxt = findViewById(R.id.imejela);
-        EditText addingrediansTxt = findViewById(R.id.potrebnisastojci);
-        EditText addtimeTxt = findViewById(R.id.potrebnovrijeme);
+        EditText addtimeTxt = findViewById(R.id.txtpotrebnovrijeme);
         EditText addportionsInt = findViewById(R.id.brojporcija);
-        EditText adddirectionTxt = findViewById(R.id.upute);
+        EditText addurlTxt = findViewById(R.id.urlslike);
 
-        Button addButton = findViewById(R.id.dodajsliku);
-        Button recepiesaveButton = findViewById(R.id.spremi);
+        Button saveButton = findViewById(R.id.spremi);
 
         DatabaseReference recepiesRef = mRef.child("jela");
 
-        recepiesaveButton.setOnClickListener(new View.OnClickListener() {
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String imejela = addnamedihTxt.getText().toString();
-                final String potrebnisastojci = addingrediansTxt.getText().toString();
-                final String potrebnovrijeme = addingrediansTxt.getText().toString();
+                final String txtpotrebnovrijeme= addtimeTxt.getText().toString();
                 final String brojporcija = addportionsInt.getText().toString();
-                final String upute = adddirectionTxt.getText().toString();
+                final String urlslike = addurlTxt.getText().toString();
 
                 HashMap<String, Object> recipeDta = new HashMap<>();
                 recipeDta.put("imejela", imejela);
-                recipeDta.put("potrebnisastojci", potrebnisastojci);
-                recipeDta.put("potrebnovrijeme", potrebnovrijeme);
+                recipeDta.put("txtpotrebnovrijeme", txtpotrebnovrijeme);
                 recipeDta.put("brojporcija", brojporcija);
-                recipeDta.put("upute", upute);
+                recipeDta.put("urlslike", urlslike);
 
 
                 recepiesRef.push().setValue(recipeDta).addOnCompleteListener(new OnCompleteListener<Void>() {

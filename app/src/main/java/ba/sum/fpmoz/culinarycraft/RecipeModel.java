@@ -5,30 +5,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Map;
 
 public class RecipeModel {
-    private String dodajjelo;
     private String imejela;
-    private String potrebnisastojci;
-    private String potrebnovrijeme;
+
+    private String txtpotrebnovrijeme;
     private int brojporcija;
-    private String upute;
+    private String urlslike;
 
     public RecipeModel() {}
 
-    public RecipeModel(String dodajjelo, String imejela,String potrebnisastojci, String potrebnovrijeme,int brojporcija, String upute){
-        this.dodajjelo = dodajjelo;
+    public RecipeModel(String imejela,String txtpotrebnovrijeme, int brojporcija, String urlslike){
         this.imejela = imejela;
-        this.potrebnisastojci = potrebnisastojci;
-        this.potrebnovrijeme = potrebnovrijeme;
+        this.txtpotrebnovrijeme = txtpotrebnovrijeme;
         this.brojporcija = brojporcija;
-        this.upute = upute;
-    }
+        this.urlslike = urlslike;
 
-    public String getDodajjelo() {
-        return dodajjelo;
-    }
-
-    public void setDodajjelo(String dodajjelo) {
-        this.dodajjelo = dodajjelo;
     }
 
     public String getImejela() {
@@ -39,20 +29,12 @@ public class RecipeModel {
         this.imejela = imejela;
     }
 
-    public String getPotrebnisastojci() {
-        return potrebnisastojci;
+    public String getTxtpotrebnovrijeme() {
+        return txtpotrebnovrijeme;
     }
 
-    public void setPotrebnisastojci(String potrebnisastojci) {
-        this.potrebnisastojci = potrebnisastojci;
-    }
-
-    public String getPotrebnovrijeme() {
-        return potrebnovrijeme;
-    }
-
-    public void setPotrebnovrijeme(String potrebnovrijeme) {
-        this.potrebnovrijeme = potrebnovrijeme;
+    public void setTxtpotrebnovrijeme(String txtpotrebnovrijeme) {
+        this.txtpotrebnovrijeme = txtpotrebnovrijeme;
     }
 
     public int getBrojporcija() {
@@ -63,13 +45,14 @@ public class RecipeModel {
         this.brojporcija = brojporcija;
     }
 
-    public String getUpute() {
-        return upute;
+    public String getUrlslike() {
+        return urlslike;
     }
 
-    public void setUpute(String upute) {
-        this.upute = upute;
+    public void setUrlslike(String urlslike) {
+        this.urlslike = urlslike;
     }
+
     public void saveToFirebase() {
         DatabaseReference recipesRef = FirebaseDatabase.getInstance().getReference("jelo");
         String recipeKey = recipesRef.push().getKey();
