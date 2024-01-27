@@ -4,16 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import ba.sum.fpmoz.culinarycraft.RecipeModel;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
+
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,12 +30,12 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         //EditText adddishTxt = findViewById(R.id.dodajjelo);
         EditText addnamedihTxt = findViewById(R.id.imejela);
-        EditText addingrediansTxt = findViewById(R.id.potrebnisastojci);
-        EditText addtimeTxt = findViewById(R.id.potrebnovrijeme);
+        EditText addingrediansTxt = findViewById(R.id.urlslike);
+        EditText addtimeTxt = findViewById(R.id.txtpotrebnovrijeme);
         EditText addportionsInt = findViewById(R.id.brojporcija);
-        EditText adddirectionTxt = findViewById(R.id.upute);
+        //EditText adddirectionTxt = findViewById();
 
-        Button addButton = findViewById(R.id.dodajsliku);
+        //Button addButton = findViewById(R.id.dodajsliku);
         Button recepiesaveButton = findViewById(R.id.spremi);
 
         DatabaseReference usersDbref = mDatabase.getReference("jela");
@@ -50,7 +47,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                 String potrebnisastojci = addingrediansTxt.getText().toString();
                 String potrebnovrijeme = addingrediansTxt.getText().toString();
                 String brojporcija = addportionsInt.getText().toString();
-                String upute = adddirectionTxt.getText().toString();
+                //String upute = adddirectionTxt.getText().toString();
                 AddRecipeActivity r = new AddRecipeActivity();
                 usersDbref.push().setValue(r);
                 Intent i = new Intent(AddRecipeActivity.this, MainActivity.class);

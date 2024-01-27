@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="15dp"
+    app:cardUseCompatPadding="true"
 
     >
 
@@ -21,7 +25,10 @@
                 android:id="@+id/imejela"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/izgled_slike"
                 android:ellipsize="marquee"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:padding="10dp"
@@ -38,17 +45,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_margin="8dp"
+                android:background="@drawable/izgled_slike"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/izgled_slike"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -72,6 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="@drawable/izgled_slike"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -81,7 +94,7 @@
                         android:src="@drawable/baseline_access_time_24" />
 
                     <TextView
-                        android:id="@+id/potrebnovrijeme"
+                        android:id="@+id/txtpotrebnovrijeme"
                         android:layout_width="wrap_content"
                         android:layout_height="41dp"
                         android:padding="8dp"
@@ -93,8 +106,9 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@drawable/izgled_slike"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -104,11 +118,32 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_weight="1"
-                        android:onClick="onLikeButtonClick"
+                        android:onClick="onButtonClick"
                         android:src="@drawable/ic_heart_empty" />
 
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Edit" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delete" />
             </LinearLayout>
 
 
