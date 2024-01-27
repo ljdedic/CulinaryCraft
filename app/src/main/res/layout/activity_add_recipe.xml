@@ -1,141 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/dodajsliku"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Dodaj sliku"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-    <TextView
-        android:id="@+id/logo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorDarkPurple"
-        android:fontFamily="@font/damion"
-        android:gravity="center"
-        android:text="CulinaryCraft"
-        android:textColor="@color/colorBlackText"
-        android:textSize="34sp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
-        android:id="@+id/dodajjelo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dodajsliku" />
-
     <EditText
         android:id="@+id/imejela"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
         android:hint="Ime jela"
         android:inputType="text"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dodajjelo" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
-        android:id="@+id/potrebnisastojci"
+        android:id="@+id/urlslike"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:hint="Potrebni sastojci"
+        android:layout_marginTop="20dp"
+        android:hint="Url slike"
         android:inputType="text"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
         app:layout_constraintEnd_toEndOf="@+id/imejela"
         app:layout_constraintStart_toStartOf="@+id/imejela"
-        app:layout_constraintTop_toBottomOf="@+id/imejela" />
+        app:layout_constraintTop_toBottomOf="@+id/brojporcija" />
 
     <EditText
-        android:id="@+id/potrebnovrijeme"
+        android:id="@+id/txtpotrebnovrijeme"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:drawableRight="@drawable/baseline_access_time_24"
         android:hint="Potrebno vrijeme za pripremu jela"
         android:inputType="text"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/potrebnisastojci"
-        app:layout_constraintStart_toStartOf="@+id/potrebnisastojci"
-        app:layout_constraintTop_toBottomOf="@+id/potrebnisastojci" />
+        app:layout_constraintEnd_toEndOf="@+id/urlslike"
+        app:layout_constraintStart_toStartOf="@+id/urlslike"
+        app:layout_constraintTop_toBottomOf="@+id/imejela" />
 
     <EditText
         android:id="@+id/brojporcija"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:drawableRight="@drawable/portion"
         android:hint="Broj porcija"
         android:inputType="number"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/potrebnovrijeme"
-        app:layout_constraintStart_toStartOf="@+id/potrebnovrijeme"
-        app:layout_constraintTop_toBottomOf="@+id/potrebnovrijeme" />
-
-    <EditText
-        android:id="@+id/upute"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="8dp"
-        android:hint="Kratka uputa za pripremu"
-        android:inputType="text"
-        android:paddingTop="10dp"
-        android:textColor="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/brojporcija"
-        app:layout_constraintStart_toStartOf="@+id/brojporcija"
-        app:layout_constraintTop_toBottomOf="@+id/brojporcija" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/urlslike"
+        app:layout_constraintTop_toBottomOf="@+id/txtpotrebnovrijeme" />
 
     <Button
         android:id="@+id/spremi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="60dp"
         android:text="Spremi"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upute" />
-
-    <Button
-        android:id="@+id/btnuredi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Uredi"
-        app:layout_constraintEnd_toStartOf="@+id/spremi"
-        app:layout_constraintHorizontal_bias="0.365"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upute" />
-
-    <Button
-        android:id="@+id/btnizbrisi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Izbriši"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spremi"
-        app:layout_constraintTop_toBottomOf="@+id/upute" />
+        app:layout_constraintTop_toBottomOf="@+id/urlslike" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

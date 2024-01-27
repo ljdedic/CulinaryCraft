@@ -47,6 +47,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation ("com.squareup.picasso:picasso:2.8")
+    implementation ("com.orhanobut:dialogplus:1.11@aar")
 
 
     testImplementation("junit:junit:4.13.2")
