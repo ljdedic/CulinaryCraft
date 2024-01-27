@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import ba.sum.fpmoz.culinarycraft.RecipeModel;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
@@ -14,13 +15,18 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.HashMap;
 
 public class AddRecipeActivity extends AppCompatActivity {
     FirebaseStorage storage;
     StorageReference storageReference;
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://culinarycraft-3ce71-default-rtdb.europe-west1.firebasedatabase.app/");
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference mRef = mDatabase.getReference();
 
 
     Button selectImageBtn;
@@ -41,40 +47,37 @@ public class AddRecipeActivity extends AppCompatActivity {
         Button addButton = findViewById(R.id.dodajsliku);
         Button recepiesaveButton = findViewById(R.id.spremi);
 
-        DatabaseReference usersDbref = mDatabase.getReference("jela");
+        DatabaseReference recepiesRef = mRef.child("jela");
 
         recepiesaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imejela = addnamedihTxt.getText().toString();
-                String potrebnisastojci = addingrediansTxt.getText().toString();
-                String potrebnovrijeme = addingrediansTxt.getText().toString();
-                String brojporcija = addportionsInt.getText().toString();
-                String upute = adddirectionTxt.getText().toString();
-                AddRecipeActivity r = new AddRecipeActivity();
-                usersDbref.push().setValue(r);
-                Intent i = new Intent(AddRecipeActivity.this, MainActivity.class);
-                startActivity(i);
+                final String imejela = addnamedihTxt.getText().toString();
+                final String potrebnisastojci = addingrediansTxt.getText().toString();
+                final String potrebnovrijeme = addingrediansTxt.getText().toString();
+                final String brojporcija = addportionsInt.getText().toString();
+                final String upute = adddirectionTxt.getText().toString();
+
+                HashMap<String, Object> recipeDta = new HashMap<>();
+                recipeDta.put("imejela", imejela);
+                recipeDta.put("potrebnisastojci", potrebnisastojci);
+                recipeDta.put("potrebnovrijeme", potrebnovrijeme);
+                recipeDta.put("brojporcija", brojporcija);
+                recipeDta.put("upute", upute);
+
+
+                recepiesRef.push().setValue(recipeDta).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(AddRecipeActivity.this, "Recept uspješno dodan!", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(AddRecipeActivity.this, "Recept neuspješno dodan!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 
-        //NE RADIIII!!!!
-        //Button updateRecepie = findViewById(R.id.btnuredi);
-        //updateRecepie.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
-               // ModelRecept updatedRecepie = new ModelRecept(imejela, potrebnisastojci,potrebnovrijeme,brojporcija,upute);
-          //  }
-        //});
-
-        //NE RADIIIII!!!!!
-        //Button deleteRecepie = findViewById(R.id.btnizbrisi);
-
-        //deleteRecepie.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
-           //     finish();
-         //   }
-       // });
     }
 }
