@@ -1,25 +1,24 @@
 package ba.sum.fpmoz.culinarycraft;
 
 public class Mainmodel {
-    String imejela, potrebnovrijeme, slika;
-    Integer brojporcija;
+    String imejela, potrebnovrijeme, slika, brojporcija;
 
     Mainmodel() {
         // Default constructor
     }
 
-    public Mainmodel(Integer brojporcija, String imejela, String potrebnovrijeme, String slika) {
+    public Mainmodel(String brojporcija, String imejela, String potrebnovrijeme, String slika) {
         this.brojporcija = brojporcija;
         this.imejela = imejela;
         this.potrebnovrijeme = potrebnovrijeme;
         this.slika = slika;
     }
 
-    public Integer getBrojporcija() {
+    public String getBrojporcija() {
         return brojporcija;
     }
 
-    public void setBrojporcija(Integer brojporcija) {
+    public void setBrojporcija(String brojporcija) {
         this.brojporcija = brojporcija;
     }
 

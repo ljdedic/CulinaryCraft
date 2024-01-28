@@ -35,7 +35,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Mainmodel model) {
-        holder.brojporcija.setText(String.valueOf(model.getBrojporcija()));
+        holder.brojporcija.setText(model.getBrojporcija());
         holder.imejela.setText(model.getImejela());
         holder.potrebnovrijeme.setText(model.getPotrebnovrijeme());
 
@@ -66,7 +66,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
 
                 imejela.setText(model.getImejela());
                 potrebnovrijeme.setText(model.getPotrebnovrijeme());
-                brojporcija.setText(String.valueOf(model.getBrojporcija()));
+                brojporcija.setText(model.getBrojporcija());
                 slika.setText(model.getSlika());
 
                 dialogPlus.show();
@@ -93,7 +93,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(holder.imejela.getContext(), "Pogreška tjekom anžuriranja.", Toast.LENGTH_SHORT).show();
-                                        dialogPlus.dismiss();
+                                        //dialogPlus.dismiss();
                                     }
                                 });
 
