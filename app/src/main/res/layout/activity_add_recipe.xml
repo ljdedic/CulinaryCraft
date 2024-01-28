@@ -17,7 +17,7 @@
 
 
     <EditText
-        android:id="@+id/imejela"
+        android:id="@+id/imejela1"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginLeft="10dp"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
-        android:id="@+id/urlslike"
+        android:id="@+id/urlslike1"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -40,12 +40,12 @@
         android:inputType="text"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/imejela"
-        app:layout_constraintStart_toStartOf="@+id/imejela"
-        app:layout_constraintTop_toBottomOf="@+id/brojporcija" />
+        app:layout_constraintEnd_toEndOf="@+id/imejela1"
+        app:layout_constraintStart_toStartOf="@+id/imejela1"
+        app:layout_constraintTop_toBottomOf="@+id/brojporcija1" />
 
     <EditText
-        android:id="@+id/txtpotrebnovrijeme"
+        android:id="@+id/txtpotrebnovrijeme1"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -54,12 +54,12 @@
         android:inputType="text"
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
-        app:layout_constraintEnd_toEndOf="@+id/urlslike"
-        app:layout_constraintStart_toStartOf="@+id/urlslike"
-        app:layout_constraintTop_toBottomOf="@+id/imejela" />
+        app:layout_constraintEnd_toEndOf="@+id/urlslike1"
+        app:layout_constraintStart_toStartOf="@+id/urlslike1"
+        app:layout_constraintTop_toBottomOf="@+id/imejela1" />
 
     <EditText
-        android:id="@+id/brojporcija"
+        android:id="@+id/brojporcija1"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -70,18 +70,28 @@
         android:paddingTop="10dp"
         android:textColor="@color/colorBlackText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/urlslike"
-        app:layout_constraintTop_toBottomOf="@+id/txtpotrebnovrijeme" />
+        app:layout_constraintStart_toStartOf="@+id/urlslike1"
+        app:layout_constraintTop_toBottomOf="@+id/txtpotrebnovrijeme1" />
 
     <Button
         android:id="@+id/spremi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="55dp"
         android:layout_marginBottom="60dp"
         android:text="Spremi"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urlslike" />
+        app:layout_constraintEnd_toEndOf="@+id/urlslike1"
+        app:layout_constraintStart_toStartOf="@+id/urlslike1"
+        app:layout_constraintTop_toBottomOf="@+id/urlslike1" />
+
+    <Button
+        android:id="@+id/btnnazad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nazad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spremi"
+        app:layout_constraintStart_toStartOf="@+id/spremi"
+        app:layout_constraintTop_toBottomOf="@+id/spremi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

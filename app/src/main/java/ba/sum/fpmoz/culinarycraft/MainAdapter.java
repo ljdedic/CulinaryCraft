@@ -1,6 +1,8 @@
 package ba.sum.fpmoz.culinarycraft;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,7 +36,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull Mainmodel model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, final int position, @NonNull Mainmodel model) {
         holder.brojporcija.setText(model.getBrojporcija());
         holder.imejela.setText(model.getImejela());
         holder.potrebnovrijeme.setText(model.getPotrebnovrijeme());
@@ -57,7 +59,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
                 View view = dialogPlus.getHolderView();
 
                 EditText imejela = view.findViewById(R.id.txtjela);
-                EditText potrebnovrijeme = view.findViewById(R.id.txtpotrebnovrijeme);
+                EditText potrebnovrijeme = view.findViewById(R.id.txtpotrebnovrijeme1);
                 EditText brojporcija = view.findViewById(R.id.txtbrojporcija);
                 EditText slika = view.findViewById(R.id.txtnazivslike);
 
@@ -93,13 +95,42 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(holder.imejela.getContext(), "Pogreška tjekom anžuriranja.", Toast.LENGTH_SHORT).show();
-                                        //dialogPlus.dismiss();
+                                        dialogPlus.dismiss();
                                     }
                                 });
 
                     }
                 });
 
+
+            }
+        });
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(holder.imejela.getContext());
+                builder.setTitle("Želite li izbrisati?");
+                builder.setMessage("Izbrisani podatci se ne mogu vratiti");
+
+
+                builder.setPositiveButton("Izbriši", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseDatabase.getInstance().getReference().child("jela")
+                                .child(getRef(position).getKey()).removeValue();
+
+                    }
+                });
+
+                builder.setNegativeButton("Otkaži", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(holder.imejela.getContext(),"Otkazano", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                builder.show();
 
             }
         });
@@ -125,9 +156,9 @@ public class MainAdapter extends FirebaseRecyclerAdapter<Mainmodel, MainAdapter.
             super(itemView);
 
             img = itemView.findViewById(R.id.imageView_food);
-            brojporcija = itemView.findViewById(R.id.brojporcija);
-            imejela = itemView.findViewById(R.id.imejela);
-            potrebnovrijeme = itemView.findViewById(R.id.txtpotrebnovrijeme);
+            brojporcija = itemView.findViewById(R.id.brojporcija1);
+            imejela = itemView.findViewById(R.id.imejela1);
+            potrebnovrijeme = itemView.findViewById(R.id.txtpotrebnovrijeme1);
 
             btnEdit = (Button)itemView.findViewById(R.id.btnEdit);
             btnDelete = (Button)itemView.findViewById(R.id.btnDelete);

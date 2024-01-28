@@ -1,77 +1,88 @@
 package ba.sum.fpmoz.culinarycraft;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
 import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class AddRecipeActivity extends AppCompatActivity {
-    FirebaseStorage storage;
-    StorageReference storageReference;
-    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance("https://culinarycraft-3ce71-default-rtdb.europe-west1.firebasedatabase.app/");
 
+    EditText imejela, potrebnovrijeme, slika, brojporcija;
+    Button btnnazad, spremi;
 
-    Button selectImageBtn;
-    Button uploadImageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
-        //EditText adddishTxt = findViewById(R.id.dodajjelo);
-        EditText addnamedihTxt = findViewById(R.id.imejela);
-        EditText addingrediansTxt = findViewById(R.id.urlslike);
-        EditText addtimeTxt = findViewById(R.id.txtpotrebnovrijeme);
-        EditText addportionsInt = findViewById(R.id.brojporcija);
-        //EditText adddirectionTxt = findViewById();
+        imejela = (EditText)findViewById(R.id.imejela1);
+        potrebnovrijeme = (EditText)findViewById(R.id.txtpotrebnovrijeme1);
+        slika = (EditText)findViewById(R.id.urlslike1);
+        brojporcija = (EditText)findViewById(R.id.brojporcija1);
 
-        //Button addButton = findViewById(R.id.dodajsliku);
-        Button recepiesaveButton = findViewById(R.id.spremi);
+        spremi = (Button)findViewById(R.id.spremi);
+        btnnazad = (Button)findViewById(R.id.btnnazad);
 
-        DatabaseReference usersDbref = mDatabase.getReference("jela");
-
-        recepiesaveButton.setOnClickListener(new View.OnClickListener() {
+        spremi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imejela = addnamedihTxt.getText().toString();
-                String potrebnisastojci = addingrediansTxt.getText().toString();
-                String potrebnovrijeme = addingrediansTxt.getText().toString();
-                String brojporcija = addportionsInt.getText().toString();
-                //String upute = adddirectionTxt.getText().toString();
-                AddRecipeActivity r = new AddRecipeActivity();
-                usersDbref.push().setValue(r);
-                Intent i = new Intent(AddRecipeActivity.this, MainActivity.class);
-                startActivity(i);
+                insertData();
+                clearAll();
             }
         });
 
-        //NE RADIIII!!!!
-        //Button updateRecepie = findViewById(R.id.btnuredi);
-        //updateRecepie.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
-               // ModelRecept updatedRecepie = new ModelRecept(imejela, potrebnisastojci,potrebnovrijeme,brojporcija,upute);
-          //  }
-        //});
+        btnnazad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-        //NE RADIIIII!!!!!
-        //Button deleteRecepie = findViewById(R.id.btnizbrisi);
 
-        //deleteRecepie.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
-           //     finish();
-         //   }
-       // });
+    }
+    private void insertData()
+    {
+        Map<String,Object> map = new HashMap<>();
+        map.put("imejela",imejela.getText().toString());
+        map.put("potrebnovrijeme",potrebnovrijeme.getText().toString());
+        map.put("brojporcija",brojporcija.getText().toString());
+        map.put("slika",slika.getText().toString());
+
+        FirebaseDatabase.getInstance().getReference().child("jela").push()
+                .setValue(map)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(AddRecipeActivity.this, "Podaci uspješno dodani.", Toast.LENGTH_SHORT).show();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(AddRecipeActivity.this, "Greška pri dodavanju.", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+    }
+    private void clearAll()
+    {
+        imejela.setText("");
+        potrebnovrijeme.setText("");
+        brojporcija.setText("");
+        slika.setText("");
     }
 }
