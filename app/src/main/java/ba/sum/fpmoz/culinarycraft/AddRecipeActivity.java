@@ -3,6 +3,7 @@ package ba.sum.fpmoz.culinarycraft;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.content.Intent;
 
 import android.widget.Button;
 import android.widget.Toast;
@@ -46,8 +47,9 @@ public class AddRecipeActivity extends AppCompatActivity {
 
         btnnazad.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onClick(View view) {
+                Intent intent = new Intent(AddRecipeActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
