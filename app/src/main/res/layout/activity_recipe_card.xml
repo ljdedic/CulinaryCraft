@@ -112,14 +112,7 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/likeButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:onClick="onButtonClick"
-                        android:src="@drawable/ic_heart_empty" />
+
 
                 </LinearLayout>
 
